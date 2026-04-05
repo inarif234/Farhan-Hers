@@ -1,0 +1,118 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Special+Gothic&display=swap');
+body {
+    font-family: 'Special Gothic', sans-serif;
+    scroll-behavior: smooth;
+}
+.serif-italic {
+    font-family: 'Baskervville', serif;
+    font-style: italic;
+}
+
+/* QUOTE HOVER EFFECT */
+#about .quote:hover {
+    color: #111; /* warna berubah saat hover */
+    transform: scale(1.05); /* sedikit membesar */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* WORK SECTION */
+#work {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+/* IMAGE */
+.work-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile */
+    gap: 1px;
+}
+@media screen and (min-width: 768px) {
+    .work-container {
+        grid-template-columns: repeat(2, 1fr); /* Tablet */
+    }
+}
+@media screen and (min-width: 1024px) {
+    .work-container {
+        grid-template-columns: repeat(2, 1fr); /* Desktop */
+    }
+}
+.work-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 0;
+    cursor: pointer;
+}
+.work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.work-item:hover img {
+    transform: scale(1.05);
+}
+.work-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7),
+        rgba(0,0,0,0.2),
+        transparent
+    );
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+/* TEXT */
+.work-overlay h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+/* EXTRA (LOAD MORE) */
+.work-item.extra {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s;
+}
+.work-item.extra:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* CONTACT */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+}
+.modal-overlay.active { display: flex; }
+.contact-card {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 32px;
+    padding: 40px;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+.modal-overlay.active .contact-card {
+    transform: translateY(0);
+}
