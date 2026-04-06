@@ -1,15 +1,15 @@
-/* FONT */
+/* ================= FONT ================= */
 @import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Special+Gothic&display=swap');
 body {
     font-family: 'Special Gothic', sans-serif;
-    scroll-behavior: smooth;
 }
+
 .serif-italic {
     font-family: 'Baskervville', serif;
     font-style: italic;
 }
 
-/* QUOTE HOVER EFEFCT */
+/* ================= QUOTE HOVER IN ABOUT SECTION ================= */
 #about .quote:hover {
     color: #111; /* warna berubah saat hover */
     transform: scale(1.05); /* sedikit membesar */
@@ -17,30 +17,32 @@ body {
     cursor: pointer;
 }
 
-/* WORK SECTION */
+/* ================= WORK SECTION ================= */
 #work {
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
 
-/* IMAGE ITEM GRID */
+/* ================= GRID IN WORK SECTION ================= */
 .work-container {
     display: grid;
     grid-template-columns: 1fr; /* Mobile */
     gap: 1px;
 }
+
 @media screen and (min-width: 768px) {
     .work-container {
         grid-template-columns: repeat(2, 1fr); /* Tablet */
     }
 }
+
 @media screen and (min-width: 1024px) {
     .work-container {
         grid-template-columns: repeat(2, 1fr); /* Desktop */
     }
 }
 
-/* IMAGE ITEM */
+/* ================= WORK ITEM IN WORK SECTION ================= */
 .work-item {
     position: relative;
     width: 100%;
@@ -49,17 +51,19 @@ body {
     border-radius: 0;
     cursor: pointer;
 }
+
 .work-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
 }
+
 .work-item:hover img {
     transform: scale(1.05);
 }
 
-/* OVERLAY IMAGE */
+/* ================= OVERLAY IN WORK SECTION ================= */
 .work-overlay {
     position: absolute;
     inset: 0;
@@ -76,7 +80,6 @@ body {
     transition: opacity 0.3s ease;
 }
 
-/* OVERLAY TEXT */
 .work-overlay h4 {
     color: white;
     font-size: 20px;
@@ -84,18 +87,19 @@ body {
     letter-spacing: 0.05em;
 }
 
-/* EXTRA ITEM (LOAD MORE) */
+/* ================= LOAD MORE ================= */
 .work-item.extra {
     opacity: 0;
     transform: translateY(20px);
     transition: 0.5s;
 }
+
 .work-item.extra:not(.hidden) {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* CONTACT MODAL*/
+/* ================= MODAL ================= */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -109,7 +113,11 @@ body {
     align-items: center;
     backdrop-filter: blur(8px);
 }
-.modal-overlay.active { display: flex; }
+
+.modal-overlay.active {
+    display: flex;
+}
+
 .contact-card {
     background: white;
     width: 90%;
@@ -119,11 +127,12 @@ body {
     transform: translateY(20px);
     transition: all 0.4s ease;
 }
+
 .modal-overlay.active .contact-card {
     transform: translateY(0);
 }
 
-/* GRID BENTO*/
+/* ================= BENTO GRID IN WORK SECTION (PAGE2) ================= */
 .bento-break {
     width: 100vw;
     position: relative;
@@ -131,11 +140,12 @@ body {
     transform: translateX(-50%);
 }
 
+/* ================= LIGHTBOX ================= */
 #lightboxImg {
     border-radius: 0 !important;
 }
 
-/* ===== VIEWER OVERLAY ===== */
+/* ================= VIEW OVERLAY IN WORK SECTION (PAGE2) ================= */
 #galleryViewer {
     position: fixed;
     inset: 0;
@@ -146,14 +156,14 @@ body {
     z-index: 999;
 }
 
-/* ===== IMAGE ===== */
+/* ================= VIEW IMAGE IN WORK SECTION (PAGE2) ================= */
 #viewerImg {
     max-width: 90%;
     max-height: 85vh;
     object-fit: contain;
 }
 
-/* ===== NAV BUTTON ===== */
+/* ================= BUTTON IN WORK SECTION (PAGE2) ================= */
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -171,11 +181,11 @@ body {
     background: rgba(0,0,0,0.6);
 }
 
-/* ===== POSITION ===== */
+/* ================= POSITION ================= */
 .left-5 { left: 20px; }
 .right-5 { right: 20px; }
 
-/* ===== MOBILE: HIDE BUTTON ===== */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     .nav-btn {
         display: none;
